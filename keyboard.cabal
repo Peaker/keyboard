@@ -1,0 +1,41 @@
+Name:                keyboard
+Version:             0.1
+Synopsis:            Represent possible keyboard inputs with an ADT to allow
+                     multiple input libraries to be used more easily
+Description:         Various packages (e.g: SDL, Gtk, Vty, ...) have
+                     their own ADT's or other representation of
+                     keyboard inputs.  This makes portability between
+                     these libraries difficult.  This library provides
+                     a Keyboard input ADT that should server as a GCD
+                     of all of these libraries.
+License:             BSD3
+License-file:        LICENSE
+Author:              Eyal Lotem
+Maintainer:          eyal.lotem+hackage@gmail.com
+Copyright:           Copyright by Eyal Lotem (c) 2010
+Category:            Input, Keyboard
+Build-type:          Simple
+
+-- Extra files to be distributed with the package, such as examples or
+-- a README.
+-- Extra-source-files:  
+
+Cabal-version:       >=1.2
+
+
+Library
+  hs-Source-Dirs:      src
+  ghc-options:         -O2 -Wall
+
+  Exposed-modules:     Data.UI.Input.Keyboard.Keys
+                       Data.UI.Input.Keyboard.Mods
+                       Data.UI.Input.Keyboard.ModKey
+
+  -- Packages needed in order to build this package.
+  Build-depends:       base >= 4 && < 5
+
+  -- Modules not exported by this package.
+  -- Other-modules:       
+
+  -- Extra tools (e.g. alex, hsc2hs, ...) needed to build the source.
+  -- Build-tools:         
